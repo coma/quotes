@@ -51,6 +51,7 @@
         "enzyme"                 : "^2.2.0",
         "eslint"                 : "^3.4.0",
         "faucet"                 : "0.0.1",
+        "glob"                   : "^7.0.6",
         "ignore-styles"          : "^5.0.1",
         "nyc"                    : "^8.1.0",
         "openurl"                : "^1.1.1",
@@ -63,7 +64,7 @@
     "scripts"        : {
         "postinstall": "if [ -z \"$NODE_ENV\" ] ; then node config/prompt ; else npm run build ; fi",
         "lint"       : "eslint src",
-        "test"       : "tape 'src/**/*.test.js' | faucet",
+        "test"       : "NODE_ENV=test babel-node test",
         "cover"      : "nyc --reporter=lcov --reporter=text npm test",
         "start"      : "node server",
         "clean"      : "rm -rf web/*.js web/*.css",
