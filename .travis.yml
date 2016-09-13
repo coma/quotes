@@ -1,3 +1,12 @@
 language: node_js
+env:
+- NODE_ENV="test"
 node_js:
-  - "6.5.0"
+- 6.5.0
+deploy:
+  provider: heroku
+  api_key:
+    secure: OH4SZ9ywgo6R0fy7O68aXDZZvd+AMJ5ggHETR/ba7dNaEOgPtLyIGnOwosgVsjNMEYdBP8P0FxWZDd3I9dkV/LkcPyWvX34j1WvaD4U1alU33SCyqV72xxvF2bzaXxKv4hwkE4WmQT07U6ZXk2RCtRTIgfwT9oJQav3yexzh2fn7hPrS2YcqDeDm5rAmscXjUbApt640Dp7XMDZDovQ/t3TST4oPTRs0e74hS1x7Pl0rxtRSsem0h3UUAtO8DSUTZ3EV8tuhXKuAZupSvq39y1xeF1mLf6VK5ySDEtQUcIn+wIldIPew77pJasV9JimezSWxCpKq5/O0SHoP4EL8X6wEGP7vedpKlM/xgit/9eOx0dEv2tL+D8w3DUPjFtx1yLS7Aa8cr1+JFnnE7U0+maE0HD77yGl5PrDrgcPLwV7EnKODhbfAKujwcykAmXitoxuHSodV9vMJAGtgZE0+UCxH7A2ZDGwA3YAQUnS8hDSKbUAm8uNXmYS5gZSmRYKZ+OYmF/iGVHGmbyd9Tj4d2VzedqTJs9CA11ZYC2zJW4A8YquGQEegR3g16dwx7B5pM3jrDP5fhDhZDPWnT09i2RmlHIyh0UCz7oDXRDku8r0HAElG2pGkDRZkItsFFhf9CjwioY7gLJaw/u0LFH+x14vsdp4NcLJDPCTZ0mEVcFA=
+  app: rqg
+  on:
+    repo: coma/quotes
