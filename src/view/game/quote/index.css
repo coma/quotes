@@ -1,0 +1,8 @@
+:local(.letter) {
+    color: #34495e;
+    transition: color 150ms ease-out;
+}
+
+:local(.letter).done {
+    color: #27ae60;
+}
