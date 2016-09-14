@@ -4,9 +4,9 @@ const webpack = require('webpack'),
       Server  = require('webpack-dev-server'),
       browser = require('openurl'),
       path    = require('path'),
-      api     = require('../server'),
       {PORT}  = require('../config'),
-      dir     = require('./dir');
+      dir     = require('./dir'),
+      quotes  = require('./quotes.json');
 
 const compiler = webpack({
     devtool: 'eval',
@@ -73,8 +73,9 @@ const server = new Server(compiler, {
     publicPath        : '/',
     hot               : true,
     historyApiFallback: true,
-    setup             : app => api(app)
+    setup             : app => app
         .get('/app.css', (_, res) => res.set('Content-Type', 'text/css').send(''))
+        .get('/quote', (_, res) => res.send(quotes[Math.floor(Math.random() * quotes.length)]))
 });
 
 server.listen(PORT, () => console.log(`rttt server on port ${ PORT }`));

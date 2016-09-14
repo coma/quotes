@@ -5,33 +5,26 @@ import { fetchQuote } from 'src/actions/quote';
 import { INIT, FETCHING, FETCHED, ERROR } from 'src/status';
 import Start from './start';
 import Wait from './wait';
-import Quote from './quote';
+import Game from './game';
 import Error from './error';
-import style from './index.css';
 
-const show = ({status, fetch, quote, position}) => {
+export const View = ({status, fetch, quote, position}) => {
 
     switch (status) {
 
     case INIT:
-        return Start(fetch);
+        return Start({fetch});
 
     case FETCHING:
         return Wait();
 
     case FETCHED:
-        return Quote(quote, position);
+        return Game({quote, position});
 
     case ERROR:
         return Error();
     }
 };
-
-export const View = props => (
-    <div className={ style.main }>
-        { show(props) }
-    </div>
-);
 
 const mapState = ({quote}) => quote;
 
