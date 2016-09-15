@@ -8,7 +8,7 @@ import Wait from './wait';
 import Game from './game';
 import Error from './error';
 
-export const View = ({status, fetch, quote, position}) => {
+export const View = ({status, fetch, quote, position, length}) => {
 
     switch (status) {
 
@@ -19,7 +19,7 @@ export const View = ({status, fetch, quote, position}) => {
         return Wait();
 
     case FETCHED:
-        return Game({quote, position});
+        return Game({quote, position, length});
 
     case ERROR:
         return Error();

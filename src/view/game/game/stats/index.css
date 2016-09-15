@@ -3,3 +3,9 @@
     color: #F6F6F6;
     background-color: #2D2C2F;
 }
+
+:local(.main) path {
+    vector-effect: non-scaling-stroke;
+    stroke-width: 1px;
+    stroke: green;
+}

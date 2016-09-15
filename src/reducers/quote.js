@@ -4,8 +4,8 @@ import { FETCHING, FETCHED, ERROR, INIT } from 'src/status';
 
 export default (state = {status: INIT}, action = {}) => {
 
-    const {type, payload}   = action,
-          {quote, position} = state;
+    const {type, payload}               = action,
+          {quote, position, keystrokes} = state;
 
     switch (type) {
 
@@ -19,8 +19,8 @@ export default (state = {status: INIT}, action = {}) => {
 
         return {
             status  : FETCHED,
+            keystrokes: [],
             position: 0,
-            errors  : 0,
             length  : payload.quote.length,
             start   : Date.now(),
             ...payload
@@ -35,7 +35,14 @@ export default (state = {status: INIT}, action = {}) => {
 
     case KEYSTROKE:
 
-        return quote ? {...state, position: quote.charAt(position) === payload.letter ? position + 1 : position} : state;
+        const {letter, time} = payload,
+              right          = quote.charAt(position) === letter;
+
+        return {
+            ...state,
+            keystrokes: [...keystrokes, {right, time, letter}],
+            position  : right ? position + 1 : position
+        };
 
     default:
         return state;

@@ -3,9 +3,9 @@ import Quote from './quote';
 import Stats from './stats';
 import style from './index.css';
 
-export default props => (
+export default ({quote, position, length}) => (
     <div className={ style.main }>
-        <Quote { ...props }/>
-        <Stats/>
+        <Quote { ...{quote, position} }/>
+        <Stats { ...{position, length} }/>
     </div>
 );
