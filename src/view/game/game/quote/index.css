@@ -6,6 +6,7 @@
     padding: .25em;
     border: .25em solid #f1c40f;
     animation: pulse 1s infinite;
+    outline: none;
 }
 
 :local(.main):focus {

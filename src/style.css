@@ -38,7 +38,6 @@ blockquote, q {
 
 blockquote:before, blockquote:after,
 q:before, q:after {
-    content: '';
     content: none;
 }
 
@@ -62,8 +61,8 @@ html {
     -webkit-text-stroke-width: 0;
     -webkit-user-select: none;
     font-size: 14px;
-    color: #2D2C2F;
-    background-color: #F6F6F6;
+    color: #2c3e50;
+    background-color: #bdc3c7;
 }
 
 * {

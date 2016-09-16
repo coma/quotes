@@ -78,4 +78,4 @@ const server = new Server(compiler, {
         .get('/quote', (_, res) => res.send(quotes[Math.floor(Math.random() * quotes.length)]))
 });
 
-server.listen(PORT, () => console.log(`rttt server on port ${ PORT }`));
+server.listen(PORT, () => console.log(`quotes server on port ${ PORT }`));

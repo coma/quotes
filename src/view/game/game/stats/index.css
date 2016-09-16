@@ -1,11 +1,9 @@
 :local(.main) {
     height: 100px;
-    color: #F6F6F6;
-    background-color: #2D2C2F;
+    background-color: #2c3e50;
 }
 
 :local(.main) path {
-    vector-effect: non-scaling-stroke;
-    stroke-width: 1px;
-    stroke: green;
+    stroke-width: 0;
+    fill: #27ae60;
 }

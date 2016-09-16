@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { fetchQuote } from 'src/actions/quote';
@@ -8,7 +8,7 @@ import Wait from './wait';
 import Game from './game';
 import Error from './error';
 
-export const View = ({status, fetch, quote, position, length}) => {
+export const View = ({status, fetch, quote, positions}) => {
 
     switch (status) {
 
@@ -19,11 +19,18 @@ export const View = ({status, fetch, quote, position, length}) => {
         return Wait();
 
     case FETCHED:
-        return Game({quote, position, length});
+        return Game({quote, positions});
 
     case ERROR:
         return Error();
     }
+};
+
+View.propTypes = {
+    status   : PropTypes.oneOf([INIT, FETCHING, FETCHED, ERROR]).isRequired,
+    fetch    : PropTypes.func.isRequired,
+    quote    : PropTypes.string,
+    positions: PropTypes.arrayOf(PropTypes.number.isRequired)
 };
 
 const mapState = ({quote}) => quote;

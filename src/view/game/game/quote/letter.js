@@ -1,5 +1,12 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import classNames from 'classnames';
 import style from './index.css';
 
-export default ({children, done}) => <b className={ classNames(style.letter, {done}) }>{ children }</b>;
+const Letter = ({children, done}) => <b className={ classNames(style.letter, {done}) }>{ children }</b>;
+
+Letter.propTypes = {
+    children: PropTypes.string.isRequired,
+    done    : PropTypes.bool.isRequired
+};
+
+export default Letter;
