@@ -13,16 +13,16 @@ export const View = ({status, fetch, quote, positions}) => {
     switch (status) {
 
     case INIT:
-        return Start({fetch});
+        return <Start { ...{fetch} }/>;
 
     case FETCHING:
-        return Wait();
+        return <Wait/>;
 
     case FETCHED:
-        return Game({quote, positions});
+        return <Game { ...{quote, positions} }/>;
 
     case ERROR:
-        return Error();
+        return <Error/>;
     }
 };
 

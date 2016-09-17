@@ -1,17 +1,6 @@
 :local(.main) {
+    composes: box from 'src/box.css';
     flex: 1;
-    font-size: 10vmin;
-    font-weight: 700;
-    line-height: 1.2em;
-    padding: .25em;
-    border: .25em solid #f1c40f;
-    animation: pulse 1s infinite;
-    outline: none;
-}
-
-:local(.main):focus {
-    border-color: transparent;
-    animation: none;
 }
 
 :local(.letter) {
@@ -21,13 +10,4 @@
 
 :local(.letter).done {
     color: #27ae60;
-}
-
-@keyframes pulse {
-    0%, 50% {
-        border-color: #f1c40f;
-    }
-    100% {
-        border-color: transparent;
-    }
 }

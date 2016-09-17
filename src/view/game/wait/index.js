@@ -1,3 +1,4 @@
 import React from 'react';
+import style from './index.css';
 
-export default () => <p>wait...</p>;
+export default () => <div className={ style.wait }/>;

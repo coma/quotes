@@ -1,0 +1,7 @@
+:local(.wait) {
+    width: 0;
+    height: 0;
+    margin: .5em;
+    border: .5em solid transparent;
+    animation: blink 1s infinite;
+}

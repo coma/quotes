@@ -1,0 +1,20 @@
+:local(.box) {
+    padding: .25em;
+    border: .25em solid #f1c40f;
+    animation: blink 1s infinite;
+    outline: none;
+}
+
+:local(.box):focus {
+    border-color: transparent;
+    animation: none;
+}
+
+@keyframes blink {
+    0%, 50% {
+        border-color: #f1c40f;
+    }
+    100% {
+        border-color: transparent;
+    }
+}
