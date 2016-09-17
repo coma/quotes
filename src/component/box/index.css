@@ -1,17 +1,11 @@
-:local(.box) > input {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-}
-
-:local(.box) > p {
+:local(.box) {
     padding: .25em;
     border: .25em solid #f1c40f;
     animation: blink 1s infinite;
-    min-height: 100%;
+    outline: none;
 }
 
-:local(.box) > input:focus + p {
+:local(.box):focus {
     border-color: transparent;
     animation: none;
 }

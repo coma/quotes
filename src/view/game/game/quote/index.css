@@ -1,5 +1,4 @@
 :local(.main) {
-    composes: box from 'src/box.css';
     flex: 1;
 }
 

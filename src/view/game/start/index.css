@@ -1,7 +1,3 @@
 :local(.top) {
     padding: .5em;
 }
-
-:local(.box) {
-    composes: box from 'src/box.css';
-}
