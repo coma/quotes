@@ -6,9 +6,12 @@ import Letter from './letter';
 import style from './index.css';
 
 export const Quote = ({quote, position, keyPress}) => (
-    <p className={ style.main } tabIndex="1" onKeyPress={ keyPress }>
-        { quote.split('').map((letter, index) => <Letter key={ index } done={ index < position }>{ letter }</Letter>) }
-    </p>
+    <label className={ style.main }>
+        <input type="text" onKeyPress={ keyPress }/>
+        <p>
+            { quote.split('').map((letter, index) => <Letter key={ index } done={ index < position }>{ letter }</Letter>) }
+        </p>
+    </label>
 );
 
 Quote.propTypes = {
