@@ -1,4 +1,4 @@
-const offset = 60000;
+export const offset = 60000;
 
 export default ({positions, length}) => {
 
@@ -6,7 +6,7 @@ export default ({positions, length}) => {
           to   = from - offset;
 
     const points = positions
-        .map((time, position) => ({position, time}))
+        .map((time, index) => ({time, position: index + 1}))
         .reverse();
 
     const lines = points
@@ -14,7 +14,7 @@ export default ({positions, length}) => {
         .map(({position, time}) => `H${ from - time } V${ length - position }`)
         .join(' ');
 
-    const start = points.length ? length - points[0].position - 1 : length;
+    const start = points.length ? length - points[0].position : length;
 
     return {
         viewBox: `0 0 ${ offset } ${ length }`,

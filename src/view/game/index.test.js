@@ -10,13 +10,12 @@ import { shallow } from 'enzyme';
 
 test('The game view', t => {
 
-    t.plan(4);
-
     const fetch     = () => {},
           quote     = '',
           positions = [],
           props     = {fetch, quote, positions};
 
+    t.plan(4);
     t.ok(shallow(<View { ...props } status={ INIT }/>).equals(<Start { ...{fetch} }/>), `should render the start on ${ INIT }`);
     t.ok(shallow(<View { ...props } status={ FETCHING }/>).equals(<Wait/>), `should render the wait on ${ FETCHING }`);
     t.ok(shallow(<View { ...props } status={ FETCHED }/>).equals(<Game { ...{quote, positions} }/>), `should render the game on ${ FETCHED }`);
